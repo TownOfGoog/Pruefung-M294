@@ -13,13 +13,11 @@ document.addEventListener("DOMContentLoaded", () =>{
         "task": "adsfsdf"
     }
 
-
+    
 
     
-    const showTasks =document.querySelector("#a")
-    showTasks.addEventListener("click", () => {
         GetTask(); 
-    });
+    
 
     const unshow = document.querySelector('#b')
     unshow.addEventListener("click", () => { 
@@ -60,10 +58,14 @@ function renderTasks(tasks) {
 
         const tablerow = document.createElement('button')
         tablerow.innerText = 'delete'
-        tablerow.classList = ""
+        tablerow.classList = tasks.id
         tablerow.onclick = function() {
-            del()
+            del(tasks.id)
         }
+        
+
+        
+        
 
         const tablebuton = document.createElement('button')
         tablebuton.innerText = 'edit'
@@ -102,12 +104,16 @@ function TaskMaker(task) {
         body: JSON.stringify(task)
         
     })
+    location.reload();
 }
 
-function del() {
-    alert("daf")
+function del(id) {
+    
+    fetch(`http://localhost:3000/task/${id}`, {
+        method: 'DELETE',
+        'Content-Type': 'application/json'
+        
+})
+location.reload();
 }
-
-
-
 

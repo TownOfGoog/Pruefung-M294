@@ -13,23 +13,34 @@ document.addEventListener("DOMContentLoaded", () =>{
         "task": "adsfsdf"
     }
 
+
+
     
     const showTasks =document.querySelector("#a")
     showTasks.addEventListener("click", () => {
         GetTask(); 
     });
 
-
-
-    const addTask = document.querySelector('#edit')
-    addTask.addEventListener("click", () => {
-        TaskMaker
+    const unshow = document.querySelector('#b')
+    unshow.addEventListener("click", () => { 
+        var listItems = document.getElementsByClassName('li')
+        const tableBody = document.querySelector('#todolist');
+        tableBody.removeChild(listItems)
+        document.write('fweijo')
     })
-    get
-    console.log(goog.tasks)
-    TaskMaker({
-        title: 'gtg)',
+
+    const addTask = document.querySelector('#add')
+    addTask.addEventListener("click", () => {
+        var x = document.querySelector("#taskinput").value;
+        TaskMaker({
+        title: x,
     completed: false});
+    })
+    
+    console.log(goog.tasks)
+
+    
+    
 })
 
 
@@ -49,6 +60,10 @@ function renderTasks(tasks) {
 
         const tablerow = document.createElement('button')
         tablerow.innerText = 'delete'
+        tablerow.classList = ""
+        tablerow.onclick = function() {
+            del()
+        }
 
         const tablebuton = document.createElement('button')
         tablebuton.innerText = 'edit'
@@ -59,6 +74,8 @@ function renderTasks(tasks) {
         
     });
 }
+
+
 
 function unrenderTasks(tasks){
     console.log(tasks)
@@ -83,7 +100,12 @@ function TaskMaker(task) {
 
         },
         body: JSON.stringify(task)
+        
     })
+}
+
+function del() {
+    alert("daf")
 }
 
 

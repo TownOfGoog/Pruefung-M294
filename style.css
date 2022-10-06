@@ -4,6 +4,24 @@
     align-content: flex-start;
 }
 
+.input{
+    border: ridge 2px;
+    padding: 5px;
+    width: 50em;
+    overflow: auto;
+}
+.Inputt{
+    border: ridge 2px;
+    padding: 5px;
+    min-height: 6em;
+    width: 66em;
+    overflow: auto;
+}
+
+.jo{
+    justify-content: center;
+}
+
 .flexbox-item {
     width: 900px;
     margin:10px;
@@ -15,9 +33,12 @@
 
 .flexbox-item-1{
     min-height: 100px;
+    
 }
 .flexbox-item-2{
     min-height: 100px;
+    max-width: 300px;
+
 }
 .flexbox-item-3{
     min-height: 100px;
@@ -28,10 +49,11 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    background-color: rgb(234, 171, 142);
+    background-color: aqua;
     background-size: cover;
     background-repeat: no-repeat;
     overflow-y: scroll;
+    min-height: 3000px;
   }
 
   div.transbox {
@@ -42,3 +64,4 @@ body {
     margin: 30px;
     font-weight: bold;
   }
+  

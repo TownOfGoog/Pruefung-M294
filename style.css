@@ -67,6 +67,8 @@ body {
     padding: 20px;
     margin: 30px;
     font-weight: bold;
+    border-radius: 10px;
+
   }
   div.transboxx {
     background-color: rgba(163, 228, 253, 0.40);
@@ -76,5 +78,7 @@ body {
     margin: 30px;
     font-weight: bold;
     justify-content: center;
+    border-radius: 10px;
+
   }
   

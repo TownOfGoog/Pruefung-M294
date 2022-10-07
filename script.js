@@ -1,6 +1,6 @@
 function GetTask() {
     
-    fetch ("http://localhost:3000/tasks")
+    fetch ("http://127.0.0.1:3000/auth/cookie/tasks")
     .then((response) => response.json())
     .then((data) => renderTasks(data))}
     console.log("date")
@@ -51,29 +51,28 @@ function erledigtButton(completed, id, title){
 
 function editButton(completed, id, title){
     const erledigtButton = document.createElement("button");
-    erledigtButton.innerText = "edit"
+    erledigtButton.innerText = "edit✍️"
     erledigtButton.className= id;
     erledigtButton.onclick = function () {
-        inhalt = (document.getElementById("task-" + id + "a").value)
         
-        edit(completed, id, title, inhalt)
+        
+        edit(completed, id, title)
         
     }
     
     return erledigtButton
 }
 
-function edit(completed, id, title, inhalt) {
-    if (inhalt = null) {
-    } else {
+function edit(completed, id, title) {
+    {
        goog = prompt('New Name')
 
         const data = {
     "id": parseInt(id),
-    "title": inhalt,
+    "title": goog,
     "completed": completed
     }
-        fetch("http://localhost:3000/tasks", {
+        fetch("http://127.0.0.1:3000/auth/cookie/tasks", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -101,7 +100,7 @@ function fertig(completed, id, title) {
     "title": title,
     "completed": false
     }
-        fetch("http://localhost:3000/tasks", {
+        fetch("http://127.0.0.1:3000/auth/cookie/tasks", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -120,7 +119,7 @@ function fertig(completed, id, title) {
     "title": title,
     "completed": true
     }
-        fetch("http://localhost:3000/tasks", {
+        fetch("http://127.0.0.1:3000/auth/cookie/tasks", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -153,11 +152,12 @@ function renderTasks(tasks) {
         tableRow.append(createCell(tasks.id), createCell(tasks.title), createCell(tasks.completed))
         
         tableRow.innerText = tasks.title + ' done:' + tasks.completed
+        
         tableRow.className = tasks.id
 
 
         const tablerow = document.createElement('button')
-        tablerow.innerText = 'delete'
+        tablerow.innerText = 'delete❌'
         tablerow.classList = tasks.id
         tablerow.onclick = function() {
             del(tasks.id)
@@ -179,7 +179,7 @@ function renderTasks(tasks) {
         tableRow.innerHTML + tasks.completed
         tableRow.appendChild(tablerow);
         tableRow.appendChild(editButton(tasks.completed, tasks.id, tasks.title));
-        tableRow.appendChild(editText);
+      
         
     });
 }
@@ -202,7 +202,7 @@ function unrenderTasks(tasks){
   
 
 function TaskMaker(task) {
-    fetch("http://localhost:3000/tasks", {
+    fetch("http://127.0.0.1:3000/auth/cookie/tasks", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -216,7 +216,7 @@ function TaskMaker(task) {
 
 function del(id) {
     
-    fetch(`http://localhost:3000/task/${id}`, {
+    fetch(`http://127.0.0.1:3000/auth/cookie/task/${id}`, {
         method: 'DELETE',
         'Content-Type': 'application/json'
         

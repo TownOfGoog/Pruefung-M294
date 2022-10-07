@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+   <style>
+    .display{
+        display: none;
+    }
+
+    body{
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+   </style>
+    
+
+
+</head>
+<title>Login</title><a href="list.html">Task List</a>
+    <body>
+        
+        <h1>Login</h1>
+        
+        <div id="loggedIn" class="hidden">
+    
+            <p class="display">Sie sind eingeloggt!</p>
+            <script src="loginScript.js"></script>
+        </div>
+    
+        <div id="notLoggedIn" class="hidden">
+    
+    
+    
+            <form id="login">
+                <div>
+                    <label for="emailInput">Email</label>
+                    <input type="email" name="email" id="emailInput">
+                </div>
+                <div>
+                    <label for="passwordInput">Passwort</label>
+                    <input type="password" name="password" id="passwordInput">
+                    <button type="submit">Login</button>
+            </form>
+        </div>
+        
+        </form>
+        </div>
+    </body>
+
+</html>

@@ -55,7 +55,7 @@ function editButton(completed, id, title){
     erledigtButton.className= id;
     erledigtButton.onclick = function () {
         inhalt = (document.getElementById("task-" + id + "a").value)
-        alert(inhalt)
+        
         edit(completed, id, title, inhalt)
         
     }
@@ -66,7 +66,7 @@ function editButton(completed, id, title){
 function edit(completed, id, title, inhalt) {
     if (inhalt = null) {
     } else {
-       
+       goog = prompt('New Name')
 
         const data = {
     "id": parseInt(id),
@@ -78,7 +78,10 @@ function edit(completed, id, title, inhalt) {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({
+                id: id,
+                title: goog
+            })
         })
         .then((response) => response.json())
         .then((data) => {

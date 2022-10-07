@@ -1,1 +1,7 @@
 background-image: url("aaaaaaaaaaaaaa0_full.jpg");
+
+if (tasks.completed = true){
+            tableRow.innerText = tasks.title + ' Done'
+        } else if(tasks.completed = false) {
+            tableRow.innerText = tasks.title + ' ToDo'
+        }

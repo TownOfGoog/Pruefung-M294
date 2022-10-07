@@ -1,6 +1,8 @@
 function GetTask() {
     
-    fetch ("http://127.0.0.1:3000/auth/cookie/tasks")
+    fetch ("http://127.0.0.1:3000/auth/cookie/tasks", {
+        credentials: "include"
+    })
     .then((response) => response.json())
     .then((data) => renderTasks(data))}
     console.log("date")
@@ -73,6 +75,7 @@ function edit(completed, id, title) {
     "completed": completed
     }
         fetch("http://127.0.0.1:3000/auth/cookie/tasks", {
+            credentials: "include",
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -101,6 +104,7 @@ function fertig(completed, id, title) {
     "completed": false
     }
         fetch("http://127.0.0.1:3000/auth/cookie/tasks", {
+            credentials: "include",
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -120,6 +124,7 @@ function fertig(completed, id, title) {
     "completed": true
     }
         fetch("http://127.0.0.1:3000/auth/cookie/tasks", {
+            credentials: "include",
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -203,6 +208,7 @@ function unrenderTasks(tasks){
 
 function TaskMaker(task) {
     fetch("http://127.0.0.1:3000/auth/cookie/tasks", {
+        credentials: "include",
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -217,6 +223,7 @@ function TaskMaker(task) {
 function del(id) {
     
     fetch(`http://127.0.0.1:3000/auth/cookie/task/${id}`, {
+        credentials: "include",
         method: 'DELETE',
         'Content-Type': 'application/json'
         

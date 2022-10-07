@@ -58,6 +58,8 @@ body {
     background-repeat: no-repeat;
     overflow-y: scroll;
     min-height: 3000px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
   }
 
   div.transbox {
